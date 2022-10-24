@@ -1,0 +1,14 @@
+`timescale 10ns/1ps
+
+module LAB01_INTRODUCTION_TB;
+
+reg A,B,C,D;
+wire X;
+LAB01_INRODUCTION U1(A,B,C,D,X);
+initial begin
+    A<=0; B<=0; C<=0; D<=0;
+    #10 A<=0; C<=0;
+    #10 B<=0; D<=0;
+end
+    
+endmodule

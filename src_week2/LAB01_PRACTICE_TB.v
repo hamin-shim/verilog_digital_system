@@ -1,0 +1,15 @@
+`timescale 10ns/1ps
+
+module LAB01_PRACTICE_TB;
+
+reg A,B;
+wire X;
+LAB01_PRACTICE U1(A,B,X);
+initial begin
+    A<=0; B<=0;
+    #10 A<=1;
+    #10 B<=1;
+    #10 A<=0;
+end
+    
+endmodule

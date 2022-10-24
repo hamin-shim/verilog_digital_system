@@ -1,0 +1,10 @@
+module LAB02_3TO8DECODER_2 (
+    A2,A1,A0,D7,D6,D5,D4,D3,D2,D1,D0
+);
+    input A2,A1,A0;
+    output D7,D6,D5,D4,D3,D2,D1,D0;
+
+    LAB02_2TO4DECODER_EN U1(A0, A1, ~A2, D3, D2, D1, D0);
+    LAB02_2TO4DECODER_EN U1(A0, A1, A2, D7,D6,D5,D4);
+
+endmodule
