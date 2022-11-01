@@ -24,3 +24,37 @@ end
 endmodule
 
 
+// JK-FlipFlop Module
+module JK_flipflop (clk, RESET, K, J, Q, Qbar);
+input clk, RESET, K, J;
+output Q, Qbar;
+reg Q;
+// JK f/f
+assign Qbar = ~Q;
+always @(negedge clk, negedge RESET)
+begin
+if(!RESET)
+Q <= 0;
+else if (K==0 && J==0)
+Q <= Q;
+else if (K==1 && J==0)
+Q <= 0;
+else if (K==0 && J==1)
+Q <= 1;
+else
+Q <= ~Q;
+end
+endmodule
+
+
+
+// 3bits Ripple Down Counter
+module rippleDownCounter (clk, CLR, Q, Qbar);
+input clk, CLR;
+output [2:0] Q, Qbar;
+supply1 H;
+JK_flipflop U0 (clk, CLR, H, H, Q[0], Qbar[0]);
+JK_flipflop U1 (Qbar[0], CLR, H, H, Q[1], Qbar[1]);
+JK_flipflop U2 (Qbar[1], CLR, H, H, Q[2], Qbar[2]);
+endmodule
+
