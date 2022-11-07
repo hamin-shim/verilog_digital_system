@@ -35,7 +35,7 @@ module LAB03_4BIT_ABS(
 	wire c_out;
 	assign sel = a[3];
 	wire [3:0] cmpl;
-	assign cmpl = (sel==1) ? (a^{4{sel}}+4'b0001) : a;
+	assign cmpl = (sel==1) ? ((a^{4{sel}})+4'b0001) : a;
 	LAB03_ADDER_4BIT U1 (cmpl,b,0,c_out,sum);
 	
 endmodule
