@@ -1,34 +1,27 @@
-module LAB06_TRAFFIC(RESETN, CLK, Q1,Q2, LED);
+module LAB06_TRAFFIC(RESETN, CLK, CARLED,HUMANLED, Q);
 input RESETN,CLK;
-output [2:0] LED;
+output [3:0] Q;
 output [3:0] CARLED;
-output [3:0] HUMANLED;
+output [1:0] HUMANLED;
 
-wire [3:0] Q;
-reg [2:0] CARLED;
-reg [2:0] HUMANLED;
+reg [3:0] CARLED;
+reg [1:0] HUMANLED;
 LAB06_UPDNCOUNTER U0(RESETN, CLK, 0, Q);
 
-// – 차량용
-// • Q<5: 직/좌,  Q<7: 황, Q< 15: 적
-// – 보행자용
-// • Q<7: 적, Q<15: 청
 
 always @ (posedge CLK or posedge RESETN) begin
     case(Q)
-        4'b0101 : CARLED = 3'b001; //직/좌
-        4'b1010 : CARLED = 3'b011; //황
-        4'b1111 : CARLED = 3'b010; //적
+		4'b0000 : CARLED = 4'b0000; 
+        4'b0101 : CARLED = 4'b1100; 
+        4'b0111 : CARLED = 4'b0010; 
+        4'b1110 : CARLED = 4'b0001; 
     endcase
 end
 always @ (posedge CLK or posedge RESETN) begin
     case(Q)
-        4'b1010 : HUMANLED = 3'b010; //적
-        4'b1111 : HUMANLED = 3'b001; //청
+        4'b0110 : HUMANLED = 2'b10;
+        4'b1100 : HUMANLED = 2'b01;
     endcase
 end
 
-assign 
 endmodule
-
-
