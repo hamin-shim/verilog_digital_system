@@ -10,4 +10,3 @@ always @(posedge CLK) begin
 end
 assign Q = (RD==0) ? SRAM[A] : 4'bz;
 endmodule
-
