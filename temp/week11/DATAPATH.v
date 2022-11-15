@@ -78,12 +78,12 @@ LogicCircuit U1(Adata, Bdata, FS[1], FS[0], LogicOut);
 MUX2to1 U2(LogicOut,ArithOut,FS[2],Fout);
 endmodule
 
-module DATAPATH(CLK, ControlWord, ConstantIn, DataIn, Reg0, Reg1, Reg2, Reg3,temp);
+module DATAPATH(CLK, ControlWord, ConstantIn, DataIn, Reg0, Reg1, Reg2, Reg3);
 input [12:0] ControlWord;
 input [3:0] ConstantIn;
 input [3:0] DataIn;
 input CLK;
-output [3:0] Reg0, Reg1, Reg2, Reg3,temp;
+output [3:0] Reg0, Reg1, Reg2, Reg3;
 
 wire [3:0] Ddata, Adata, Bdata;
 wire [3:0] MUXBout, Fout;

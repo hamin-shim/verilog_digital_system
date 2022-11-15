@@ -6,10 +6,10 @@ reg CLK;
 reg [12:0] CW;
 reg [3:0] CONSTANT;
 reg [3:0] DATA;
-wire [3:0] reg0, reg1, reg2, reg3,temp;
+wire [3:0] reg0, reg1, reg2, reg3;
 
 
-DATAPATH U1(CLK, CW, CONSTANT, DATA, reg0, reg1, reg2, reg3, temp);
+DATAPATH U1(CLK, CW, CONSTANT, DATA, reg0, reg1, reg2, reg3);
 
 initial begin
 	CLK<=0;CW<=13'b0000000000000;CONSTANT<=4'b0000;DATA<=4'b0000;
