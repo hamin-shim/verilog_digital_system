@@ -74,8 +74,11 @@ wire [3:0] ArithOut,LogicOut;
 wire Cout;
 
 ArithmeticCircuit U0(Adata, Bdata, FS[1], FS[0], FS[3], ArithOut, Cout);
+// ArithmeticCircuit U0(Adata, Bdata, s1, s0, cin, ArithOut, Cout);
 LogicCircuit U1(Adata, Bdata, FS[1], FS[0], LogicOut);
+// LogicCircuit U1(Adata, Bdata, s1, s0, LogicOut);
 MUX2to1 U2(LogicOut,ArithOut,FS[2],Fout);
+// MUX2to1 U2(LogicOut,ArithOut,s2,Fout);
 endmodule
 
 module DATAPATH(CLK, ControlWord, ConstantIn, DataIn, Reg0, Reg1, Reg2, Reg3);
