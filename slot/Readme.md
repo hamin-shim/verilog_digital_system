@@ -10,6 +10,6 @@
 [ ] 현재 가지고 있는 코인 정보 저장 및 수정 모듈
 [ ] Text Lcd 총괄하는 모듈
 [ ] LED 점멸 동작시키는 모듈
-[o] BCD to 7 Segment 디코더
-[ ] 8개의 7 Segment 연결 모듈
+[x] BCD to 7 Segment 디코더
+[x] 8개의 7 Segment 연결 모듈
 [ ] main(slot)
