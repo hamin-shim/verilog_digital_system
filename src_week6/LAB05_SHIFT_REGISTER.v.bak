@@ -1,3 +1,0 @@
-module LAB05_SHIFT_REGISTER(CLK,SI,SO);
- 
- endmodule
