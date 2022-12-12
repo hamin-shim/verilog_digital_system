@@ -1,4 +1,4 @@
-module textlcd(resetn,clk,LCD_E,LCD_RS,LCD_RW,LCD_DATA);
+module textlcds0(resetn,clk,LCD_E,LCD_RS,LCD_RW,LCD_DATA);
 
 input resetn,clk;
 output LCD_E,LCD_RS,LCD_RW;
