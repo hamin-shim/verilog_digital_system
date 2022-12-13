@@ -133,6 +133,21 @@ module slotmachine(slot_a1,slot_a2,slot_a3,slot_b1,slot_b2,slot_b3,slot_c1,slot_
         end
       s3 :
           begin
+          if (calend) begin
+            
+          end
+          else if(STOP1 == STOP2 && STOP1 == STOP3 && STOP2 == STOP3) begin
+            cur_coin = cur_coin + 8'b1100011;
+            calend = calend + 1
+          end
+          else if (STOP1 == STOP2 || STOP1 == STOP3 || STOP2 == STOP3) begin
+            cur_coin = cur_coin + 8'b00000101;
+            calend = calend +1
+          end
+          else begin
+            cur_coin = cur_coin + 8'b00000000;
+          end
+
           if(slot_a1 == slot_a2 && slot_a1 == slot_a3 && slot_a2 == slot_a3) begin
             if(slot_a1 == 3'b000) begin
               cur_coin = cur_coin + 8'b00000000;

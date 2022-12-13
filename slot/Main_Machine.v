@@ -38,7 +38,7 @@ module Main_Machine (
     SEG7_CTRL U3(CLK, RST, {a1,b1,c1,d1,e1,f1,g1},{a2,b2,c2,d2,e2,f2,g2},0,0,0,0,0,0,SEG_COM, SEG_DATA); 
 
 
-    always @ (negedge clrb or posedge clk) begin
+    always @ (negedge RST or posedge clk) begin
     if (!RST) begin
         cur_state = s0;
     end
@@ -63,6 +63,7 @@ module Main_Machine (
   always @ (cur_state or C_IN or GAME_START) begin
     case (cur_state)
       s0 :
+       
         if(C_IN == 1'b1) begin
          gameset = 1'b1; 
          nxt_state = s1;
@@ -239,6 +240,79 @@ module Main_Machine (
           cur_coin = 1'b0;
           coin_out = 1'b1;
           end
+    endcase
+  end
+
+  always @ (cur_state or C_IN or GAME_START) begin
+    case (cur_state)
+      s0 :
+       
+        if(C_IN == 1'b1) begin
+         gameset = 1'b1; 
+         nxt_state = s1;
+        end
+        else begin
+          gameset = 1'b0;
+          nxt_state = s0; 
+        end
+      s1 :
+        if(C_IN == 1'b1) begin
+            cur_coin = cur_coin + 1;
+        //   if(cur_coin == 1'b1) begin
+        //   nxt_state = s2;
+        //   end
+        end
+        else if(cur_coin >=99) begin
+          nxt_state = s3;
+        end
+        else if(GAME_START == 1'b1 )begin
+            nxt_state = s2;
+        end
+      s2 :
+          if (/*number 3 selected signal*/) begin
+            nxt_state = s1;
+          end
+          
+      s3 :
+          nxt_state = s3;
+    //   s4 :
+    //       nxt_state = s0;
+    endcase
+  end
+
+
+
+
+
+wire LCD_RW,LCD_RS,LCD_E;
+wire [7:0] LCD_DATA;
+  always @ (cur_state or RST or clk) begin
+    case (cur_state)
+      s0 :
+      begin
+        textlcds0 L0(
+    RST,CLK,LCD_E,LCD_RS,LCD_RW,LCD_DATA
+);
+        end
+      s1 :
+        begin
+        textlcds1 L1(
+    RST,CLK,LCD_E,LCD_RS,LCD_RW,LCD_DATA
+);
+        end
+      s2 :
+        begin
+        textlcds2 L2(
+    RST,CLK,LCD_E,LCD_RS,LCD_RW,LCD_DATA
+);
+        end
+      s3 :
+          begin
+          textlcds3 L3(
+    RST,CLK,LCD_E,LCD_RS,LCD_RW,LCD_DATA
+);
+        end
+      
     endcase
   end
 
