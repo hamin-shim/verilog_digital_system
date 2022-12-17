@@ -1,5 +1,5 @@
 module textlcd2(resetn,clk,LCD_E,LCD_RS,LCD_RW,LCD_DATA);
-
+//Rotating..
 input resetn,clk;
 output LCD_E,LCD_RS,LCD_RW;
 output [7:0]LCD_DATA;
@@ -176,32 +176,32 @@ begin
                                     LCD_RS=1'b0;LCD_DATA=8'b11000000;//address
                                  end
                                  1:begin
-                                    LCD_RS=1'b1;LCD_DATA=8'b00100000;//address
-                                    //
+                                    LCD_RS=1'b1;LCD_DATA=8'b01010000;//address
+                                    //p
                                  end
                                  2:begin
-                                    LCD_RS=1'b1;LCD_DATA=8'b00100000;//address
-                                    //
+                                    LCD_RS=1'b1;LCD_DATA=8'b01010010;//address
+                                    //r
                                  end
                                  3:begin
-                                    LCD_RS=1'b1;LCD_DATA=8'b00100000;//address
-                                    //
+                                    LCD_RS=1'b1;LCD_DATA=8'b01000101;//address
+                                    //e
                                  end
                                  4:begin
-                                    LCD_RS=1'b1;LCD_DATA=8'b00100000;//address
-                                    //
+                                    LCD_RS=1'b1;LCD_DATA=8'b01010011;//address
+                                    //s
                                  end
                                  5:begin
-                                    LCD_RS=1'b1;LCD_DATA=8'b00100000;//address
-                                    //
+                                    LCD_RS=1'b1;LCD_DATA=8'b01010011;//address
+                                    //s
                                  end
                                  6:begin
                                     LCD_RS=1'b1;LCD_DATA=8'b00100000;//address
                                     //
                                  end
                                  7:begin
-                                    LCD_RS=1'b1;LCD_DATA=8'b00100000;//address
-                                    //
+                                    LCD_RS=1'b1;LCD_DATA=8'b00110100;//address
+                                    //4
                                  end
                                  8:begin
                                     LCD_RS=1'b1;LCD_DATA=8'b00100000;//address

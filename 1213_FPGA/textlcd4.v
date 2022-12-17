@@ -201,7 +201,7 @@ begin
                                  end
                                  7:begin
                                     LCD_RS=1'b1;LCD_DATA=8'b00110101;//address
-                                    //5
+                                    //6
                                  end
                                  8:begin
                                     LCD_RS=1'b1;LCD_DATA=8'b00100000;//address

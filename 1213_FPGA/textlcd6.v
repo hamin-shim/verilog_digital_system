@@ -1,5 +1,5 @@
-module textlcd2(resetn,clk,LCD_E,LCD_RS,LCD_RW,LCD_DATA);
-//Rotating..
+module textlcd3(resetn,clk,LCD_E,LCD_RS,LCD_RW,LCD_DATA);
+
 input resetn,clk;
 output LCD_E,LCD_RS,LCD_RW;
 output [7:0]LCD_DATA;
@@ -101,48 +101,48 @@ begin
                                     LCD_RS=1'b0;LCD_DATA=8'b10000000;//address
                                  end
                                  1:begin
-                                    LCD_RS=1'b1;LCD_DATA=8'b01010010;//address
-                                    //R
+                                    LCD_RS=1'b1;LCD_DATA=8'b01011001;//address
+                                    //y
                                  end
                                  2:begin
                                     LCD_RS=1'b1;LCD_DATA=8'b01001111;//address
                                     //o
                                  end
                                  3:begin
-                                    LCD_RS=1'b1;LCD_DATA=8'b01010100;//address
-                                    //t
+                                    LCD_RS=1'b1;LCD_DATA=8'b01010101;//address
+                                    //u
                                  end
                                  4:begin
-                                    LCD_RS=1'b1;LCD_DATA=8'b01000001;//address
-                                    //a
+                                    LCD_RS=1'b1;LCD_DATA=8'b00100000;//address
+                                    //
                                  end
                                  5:begin
-                                    LCD_RS=1'b1;LCD_DATA=8'b01010100;//address
-                                    //t
+                                    LCD_RS=1'b1;LCD_DATA=8'b01010111;//address
+                                    //w
                                  end
                                  6:begin
                                     LCD_RS=1'b1;LCD_DATA=8'b01001001;//address
                                     //i
                                  end
                                  7:begin
-                                    LCD_RS=1'b1;LCD_DATA=8'b01001110;//address
+                                    LCD_RS=1'b1;LCD_DATA=8'b00100000;//address
                                     //n
                                  end
                                  8:begin
-                                    LCD_RS=1'b1; LCD_DATA=8'b01000111;
-                                    //g
+                                    LCD_RS=1'b1; LCD_DATA=8'b00100000;
+                                    //
                                  end
                                  9:begin
-                                    LCD_RS=1'b1; LCD_DATA=8'b00101110;
-                                    //.
+                                    LCD_RS=1'b1; LCD_DATA=8'b00100000;
+                                    //
                                  end
                                  10:begin
-                                    LCD_RS=1'b1;LCD_DATA=8'b00101110;
-                                    //.
+                                    LCD_RS=1'b1;LCD_DATA=8'b00100000;
+                                    //
                                  end
                                  11:begin
-                                    LCD_RS=1'b1;LCD_DATA=8'b00101110;
-                                    //.
+                                    LCD_RS=1'b1;LCD_DATA=8'b00100000;
+                                    //
                                  end
                                  12:begin
                                     LCD_RS=1'b1;LCD_DATA=8'b00100000;
@@ -176,32 +176,32 @@ begin
                                     LCD_RS=1'b0;LCD_DATA=8'b11000000;//address
                                  end
                                  1:begin
-                                    LCD_RS=1'b1;LCD_DATA=8'b01010000;//address
-                                    //p
+                                    LCD_RS=1'b1;LCD_DATA=8'b00100000;//address
+                                    //
                                  end
                                  2:begin
-                                    LCD_RS=1'b1;LCD_DATA=8'b01010010;//address
-                                    //r
+                                    LCD_RS=1'b1;LCD_DATA=8'b00100000;//address
+                                    //
                                  end
                                  3:begin
-                                    LCD_RS=1'b1;LCD_DATA=8'b01000101;//address
-                                    //e
+                                    LCD_RS=1'b1;LCD_DATA=8'b00100000;//address
+                                    //
                                  end
                                  4:begin
-                                    LCD_RS=1'b1;LCD_DATA=8'b01010011;//address
-                                    //s
+                                    LCD_RS=1'b1;LCD_DATA=8'b00100000;//address
+                                    //
                                  end
                                  5:begin
-                                    LCD_RS=1'b1;LCD_DATA=8'b01010011;//address
-                                    //s
+                                    LCD_RS=1'b1;LCD_DATA=8'b00100000;//address
+                                    //
                                  end
                                  6:begin
                                     LCD_RS=1'b1;LCD_DATA=8'b00100000;//address
                                     //
                                  end
                                  7:begin
-                                    LCD_RS=1'b1;LCD_DATA=8'b00110101;//address
-                                    //5
+                                    LCD_RS=1'b1;LCD_DATA=8'b00100000;//address
+                                    //
                                  end
                                  8:begin
                                     LCD_RS=1'b1;LCD_DATA=8'b00100000;//address
